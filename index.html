@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy load images with intersection observer</title>
+    <link href="./src/index.css" rel="stylesheet" >
+    <script src="./src/index.js"></script>
+    </head>
+    <div class="image-container">
+        <picture>
+            <source srcset="https://ik.imagekit.io/demo/img/image1.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 320px) and (max-width: 767px)">
+
+            <source srcset="https://ik.imagekit.io/demo/img/image1.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 768px) and (max-width: 991px)">
+
+            <source srcset="https://ik.imagekit.io/demo/img/image1.jpeg?tr=w-400,h-300?"
+                media="screen and (min-width: 992px) and (max-width: 1199px)">
+
+            <source srcset="https://ik.imagekit.io/demo/img/image1.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 1200px)">
+
+            <img src="https://ik.imagekit.io/demo/img/image1.jpeg" class=" cmp-image__image"
+                width="auto" height="100%"
+                alt="image 1" >
+        </picture>
+
+        <picture >
+            <source srcset="https://ik.imagekit.io/demo/img/image2.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 320px) and (max-width: 767px)">
+
+            <source srcset="https://ik.imagekit.io/demo/img/image2.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 768px) and (max-width: 991px)">
+
+            <source srcset="https://ik.imagekit.io/demo/img/image2.jpeg?tr=w-400,h-300?"
+                media="screen and (min-width: 992px) and (max-width: 1199px)">
+
+            <source srcset="https://ik.imagekit.io/demo/img/image2.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 1200px)">
+
+            <img src="https://ik.imagekit.io/demo/img/image2.jpeg" class="cmp-image__image"
+                width="auto" height="100%"
+                alt="image 2" >
+        </picture>
+        <picture class="lazy">
+            <source data-src="https://ik.imagekit.io/demo/img/image8.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 320px) and (max-width: 767px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image8.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 768px) and (max-width: 991px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image8.jpeg?tr=w-400,h-300?"
+                media="screen and (min-width: 992px) and (max-width: 1199px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image8.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 1200px)">
+
+            <img data-src="https://ik.imagekit.io/demo/img/image3.jpeg" class=" lazy cmp-image__image"
+                width="auto" height="100%"
+                alt="image 3" >
+        </picture>
+        <picture class="lazy">
+            <source data-src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 320px) and (max-width: 767px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 768px) and (max-width: 991px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-400,h-300?"
+                media="screen and (min-width: 992px) and (max-width: 1199px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 1200px)">
+
+            <img data-src="https://ik.imagekit.io/demo/img/image4.jpeg" class=" lazy cmp-image__image"
+                width="auto" height="100%"
+                alt="image 4" >
+        </picture>
+        <picture class="lazy">
+            <source data-src="https://ik.imagekit.io/demo/img/image5.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 320px) and (max-width: 767px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image5.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 768px) and (max-width: 991px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image5.jpeg?tr=w-400,h-300?"
+                media="screen and (min-width: 992px) and (max-width: 1199px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image5.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 1200px)">
+
+            <img data-src="https://ik.imagekit.io/demo/img/image5.jpeg" class=" lazy cmp-image__image"
+                width="auto" height="100%"
+                alt="image 5" >
+        </picture>
+        <picture class="lazy">
+            <source data-src="https://ik.imagekit.io/demo/img/image6.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 320px) and (max-width: 767px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image6.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 768px) and (max-width: 991px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image6.jpeg?tr=w-400,h-300?"
+                media="screen and (min-width: 992px) and (max-width: 1199px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image6.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 1200px)">
+
+            <img data-src="https://ik.imagekit.io/demo/img/image6.jpeg" class=" lazy cmp-image__image"
+                width="auto" height="100%"
+                alt="image 6" >
+        </picture>
+        <picture class="lazy">
+            <source data-src="https://ik.imagekit.io/demo/img/image7.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 320px) and (max-width: 767px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image7.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 768px) and (max-width: 991px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image7.jpeg?tr=w-400,h-300?"
+                media="screen and (min-width: 992px) and (max-width: 1199px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image7.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 1200px)">
+
+            <img data-src="https://ik.imagekit.io/demo/img/image7.jpeg" class=" lazy cmp-image__image"
+                width="auto" height="100%"
+                alt="image 7" >
+        </picture>
+        <picture class="lazy">
+            <source data-src="https://ik.imagekit.io/demo/img/image8.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 320px) and (max-width: 767px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image8.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 768px) and (max-width: 991px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image8.jpeg?tr=w-400,h-300?"
+                media="screen and (min-width: 992px) and (max-width: 1199px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image8.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 1200px)">
+
+            <img data-src="https://ik.imagekit.io/demo/img/image8.jpeg" class=" lazy cmp-image__image"
+                width="auto" height="100%"
+                alt="image 8" >
+        </picture>
+        <picture class="lazy">
+            <source data-src="https://ik.imagekit.io/demo/img/image9.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 320px) and (max-width: 767px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image9.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 768px) and (max-width: 991px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image9.jpeg?tr=w-400,h-300?"
+                media="screen and (min-width: 992px) and (max-width: 1199px)">
+
+            <source data-src="https://ik.imagekit.io/demo/img/image9.jpeg?tr=w-400,h-300"
+                media="screen and (min-width: 1200px)">
+
+            <img data-src="https://ik.imagekit.io/demo/img/image9.jpeg" class=" lazy cmp-image__image"
+                width="auto" height="100%"
+                alt="image 9" >
+        </picture>
+      
+            
+    </div>
+
+
+<body>
+
+</body>
+
+</html>
